@@ -1,0 +1,84 @@
+2025-08-23 11:49:38 INFO  Utils:112 - [TestNG] Running:
+  G:\Selenium Project\Stan-Club\testng.xml
+
+2025-08-23 11:49:55 INFO  UserTests:34 - Assertion Passed: Response message = Otp Sent
+2025-08-23 11:49:55 INFO  UserTests:35 - ===== Send OTP API Test Completed Successfully =====
+2025-08-23 11:49:55 INFO  UserTests:42 - ===== Starting Verify OTP API Test =====
+2025-08-23 11:49:56 INFO  UserTests:45 - API executed. Status Code: 200
+2025-08-23 11:49:56 INFO  UserTests:49 - Assertion Passed: Status code is 200
+2025-08-23 11:49:56 INFO  UserTests:53 - Assertion Passed: Access token received
+2025-08-23 11:49:57 INFO  UserTests:57 - Assertion Passed: Phone number matched
+2025-08-23 11:49:57 INFO  UserTests:61 - Assertion Passed: isNewUser is false
+2025-08-23 11:49:57 INFO  UserTests:65 - Assertion Passed: User id is valid: 29575
+2025-08-23 11:49:57 INFO  UserTests:67 - ===== Verify OTP API Test Completed Successfully =====
+2025-08-23 11:49:57 INFO  UserTests:76 - ===== Starting Club Categories API Test =====
+2025-08-23 11:49:58 INFO  UserTests:82 - Status Code: 200
+2025-08-23 11:49:58 INFO  UserTests:87 - Response returned 12 categories
+2025-08-23 11:50:00 INFO  UserTests:107 - Verified all required categories (All, TRENDING, MINECRAFT, LUDO, FREEFIRE, BGMI, MOBILEGAMES, FAU-G, SnakesLadders, ANIME, MUSIC, REWARDS) are present ✅
+2025-08-23 13:13:48 INFO  Utils:112 - [TestNG] Running:
+  G:\Selenium Project\Stan-Club\testng.xml
+
+2025-08-23 13:14:00 INFO  UserTests:34 - Assertion Passed: Response message = Otp Sent
+2025-08-23 13:14:00 INFO  UserTests:35 - ===== Send OTP API Test Completed Successfully =====
+2025-08-23 13:14:00 INFO  UserTests:42 - ===== Starting Verify OTP API Test =====
+2025-08-23 13:14:01 INFO  UserTests:45 - API executed. Status Code: 200
+2025-08-23 13:14:01 INFO  UserTests:49 - Assertion Passed: Status code is 200
+2025-08-23 13:14:01 INFO  UserTests:53 - Assertion Passed: Access token received
+2025-08-23 13:14:01 INFO  UserTests:57 - Assertion Passed: Phone number matched
+2025-08-23 13:14:01 INFO  UserTests:61 - Assertion Passed: isNewUser is false
+2025-08-23 13:14:01 INFO  UserTests:65 - Assertion Passed: User id is valid: 29575
+2025-08-23 13:14:01 INFO  UserTests:67 - ===== Verify OTP API Test Completed Successfully =====
+2025-08-23 13:14:01 INFO  UserTests:76 - ===== Starting Club Categories API Test =====
+2025-08-23 13:14:01 INFO  UserTests:82 - Status Code: 200
+2025-08-23 13:14:01 INFO  UserTests:87 - Response returned 12 categories
+2025-08-23 16:05:28 INFO  Utils:112 - [TestNG] Running:
+  G:\Selenium Project\Stan-Club\testng.xml
+
+2025-08-23 16:05:37 INFO  UserTests:34 - Assertion Passed: Response message = Otp Sent
+2025-08-23 16:05:37 INFO  UserTests:35 - ===== Send OTP API Test Completed Successfully =====
+2025-08-23 16:05:37 INFO  UserTests:42 - ===== Starting Verify OTP API Test =====
+2025-08-23 16:05:37 INFO  UserTests:45 - API executed. Status Code: 200
+2025-08-23 16:05:37 INFO  UserTests:49 - Assertion Passed: Status code is 200
+2025-08-23 16:05:38 INFO  UserTests:53 - Assertion Passed: Access token received
+2025-08-23 16:05:38 INFO  UserTests:57 - Assertion Passed: Phone number matched
+2025-08-23 16:05:38 INFO  UserTests:61 - Assertion Passed: isNewUser is false
+2025-08-23 16:05:38 INFO  UserTests:65 - Assertion Passed: User id is valid: 29575
+2025-08-23 16:05:38 INFO  UserTests:67 - ===== Verify OTP API Test Completed Successfully =====
+2025-08-23 16:05:38 INFO  UserTests:76 - ===== Starting Club Categories API Test =====
+2025-08-23 16:05:38 INFO  UserTests:82 - Status Code: 200
+2025-08-23 16:05:38 INFO  UserTests:87 - Response returned 12 categories
+2025-08-23 16:05:38 INFO  UserTests:107 - Verified all required categories (All, TRENDING, MINECRAFT, LUDO, FREEFIRE, BGMI, MOBILEGAMES, FAU-G, SnakesLadders, ANIME, MUSIC, REWARDS) are present ✅
+2025-08-23 16:57:45 INFO  Utils:112 - [TestNG] Running:
+  G:\Selenium Project\Stan-Club\testng.xml
+
+2025-08-23 16:57:53 INFO  UserTests:34 - Assertion Passed: Response message = Otp Sent
+2025-08-23 16:57:53 INFO  UserTests:35 - ===== Send OTP API Test Completed Successfully =====
+2025-08-23 16:57:53 INFO  UserTests:42 - ===== Starting Verify OTP API Test =====
+2025-08-23 16:57:54 INFO  UserTests:45 - API executed. Status Code: 200
+2025-08-23 16:57:54 INFO  UserTests:49 - Assertion Passed: Status code is 200
+2025-08-23 16:57:54 INFO  UserTests:53 - Assertion Passed: Access token received
+2025-08-23 16:57:54 INFO  UserTests:57 - Assertion Passed: Phone number matched
+2025-08-23 16:57:54 INFO  UserTests:61 - Assertion Passed: isNewUser is false
+2025-08-23 16:57:54 INFO  UserTests:65 - Assertion Passed: User id is valid: 29575
+2025-08-23 16:57:54 INFO  UserTests:67 - ===== Verify OTP API Test Completed Successfully =====
+2025-08-23 16:57:54 INFO  UserTests:76 - ===== Starting Club Categories API Test =====
+2025-08-23 16:57:54 INFO  UserTests:82 - Status Code: 200
+2025-08-23 16:57:54 INFO  UserTests:87 - Response returned 12 categories
+2025-08-23 16:57:55 INFO  UserTests:107 - Verified all required categories (All, TRENDING, MINECRAFT, LUDO, FREEFIRE, BGMI, MOBILEGAMES, FAU-G, SnakesLadders, ANIME, MUSIC, REWARDS) are present ✅
+2025-08-23 18:28:36 INFO  Utils:112 - [TestNG] Running:
+  C:\Manabi\Selenium Project\Stan-Club\testng.xml
+
+2025-08-23 18:28:39 INFO  Club:34 - Assertion Passed: Response message = Otp Sent
+2025-08-23 18:28:39 INFO  Club:35 - ===== Send OTP API Test Completed Successfully =====
+2025-08-23 18:28:39 INFO  Club:42 - ===== Starting Verify OTP API Test =====
+2025-08-23 18:28:39 INFO  Club:45 - API executed. Status Code: 200
+2025-08-23 18:28:39 INFO  Club:49 - Assertion Passed: Status code is 200
+2025-08-23 18:28:39 INFO  Club:53 - Assertion Passed: Access token received
+2025-08-23 18:28:39 INFO  Club:57 - Assertion Passed: Phone number matched
+2025-08-23 18:28:39 INFO  Club:61 - Assertion Passed: isNewUser is false
+2025-08-23 18:28:39 INFO  Club:65 - Assertion Passed: User id is valid: 29575
+2025-08-23 18:28:39 INFO  Club:67 - ===== Verify OTP API Test Completed Successfully =====
+2025-08-23 18:28:39 INFO  Club:76 - ===== Starting Club Categories API Test =====
+2025-08-23 18:28:39 INFO  Club:82 - Status Code: 200
+2025-08-23 18:28:39 INFO  Club:87 - Response returned 12 categories
+2025-08-23 18:28:40 INFO  Club:107 - Verified all required categories (All, TRENDING, MINECRAFT, LUDO, FREEFIRE, BGMI, MOBILEGAMES, FAU-G, SnakesLadders, ANIME, MUSIC, REWARDS) are present ✅
