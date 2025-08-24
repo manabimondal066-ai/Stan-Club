@@ -20,7 +20,7 @@ public class UserEndPoints {
 			.accept(ContentType.JSON)
 			.body(payload)
 		.when()
-		.post(Routes.send_OTP_URL);
+		.post(Routes.send_OTP_URL);//posting url
 
 		return response;
 	}
@@ -60,7 +60,7 @@ public class UserEndPoints {
 	            .header("appInstanceId", "95df07472e39fbcd7a424bb33e6cb581")
 	            .header("countryCode", "in")
 	            .body(payload)
-	    .when()
+	    .when()//
 	            .post(Routes.verify_OTP_URL);
 	    return response;
 	}
@@ -70,7 +70,7 @@ public class UserEndPoints {
 		long timestamp = System.currentTimeMillis();
 	    String sid = timestamp + "-53337";
 	    
-		// ✅ Headers
+		//  Headers
 		Map<String, String> headers = new HashMap<>();
         headers.put("Accept", "application/json, text/plain, */*");
         headers.put("gaid", "3df78d2f-bb2d-4194-9c5d-c197970c2132");

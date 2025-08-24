@@ -1,5 +1,7 @@
 package api.test;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
@@ -17,20 +19,24 @@ public class Club {
 	Faker faker;
 	public Logger logger;
 	public String accessToken;
+	public String phone="+919800982281";
+	public String otp="1234";
+	
 
 	@BeforeClass
 	public void setupData() {
 		faker = new Faker();
-		logger = LogManager.getLogger(this.getClass());
+		logger = LogManager.getLogger(this.getClass());//FOR iNitialise the log.
 	}
 	
 	@Test(priority = 1)
 	public void testSendOTP()
 	{
-		Response response = UserEndPoints.sendOTP("+919800982289");
+		Response response = UserEndPoints.sendOTP(phone);
 		String message = response.jsonPath().getString("message");
 		
         Assert.assertEquals(message, "Otp Sent");
+        Assert.assertEquals(200, response.getStatusCode());
         logger.info("Assertion Passed: Response message = {}", message);
         logger.info("===== Send OTP API Test Completed Successfully =====");
         response.then().log().body();
@@ -40,7 +46,7 @@ public class Club {
 	public void verifyOTP()
 	{
 		logger.info("===== Starting Verify OTP API Test =====");
-		Response response=UserEndPoints.testVerifyOtp("+919800982289", "1234");
+		Response response=UserEndPoints.testVerifyOtp(phone, otp);
 		
 		logger.info("API executed. Status Code: {}", response.getStatusCode());
 
@@ -52,8 +58,8 @@ public class Club {
         Assert.assertNotNull(accessToken, "Access token should not be null");
         logger.info("Assertion Passed: Access token received");
 
-        String phone = response.jsonPath().getString("user.phone");
-        Assert.assertEquals(phone, "+919800982289");
+        String fetchedphoneNo = response.jsonPath().getString("user.phone");
+        Assert.assertEquals(phone, fetchedphoneNo);
         logger.info("Assertion Passed: Phone number matched");
 
         boolean isNewUser = response.jsonPath().getBoolean("isNewUser");
@@ -68,7 +74,6 @@ public class Club {
 
         // Print full response in logs and console
         response.then().log().body();
-        logger.debug("Full API Response: {}", response.asPrettyString());
 	}
 	
 	@Test(priority=3)
@@ -82,37 +87,55 @@ public class Club {
         logger.info("Status Code: {}", statusCode);
         Assert.assertEquals(statusCode, 200, "Expected 200 status code");
 
-        // Validate Response is Array
-        Assert.assertTrue(response.jsonPath().getList("$").size() > 0, "Response array should not be empty");
-        logger.info("Response returned {} categories", response.jsonPath().getList("$").size());
 
         SoftAssert softAssert = new SoftAssert();
 
-        softAssert.assertTrue(response.jsonPath().getList("id").contains("ALL"), "All category not found");
-        softAssert.assertTrue(response.jsonPath().getList("id").contains("TRENDING"), "TRENDING category not found");
-        softAssert.assertTrue(response.jsonPath().getList("id").contains("MINECRAFT"), "MINECRAFT category not found");
-        softAssert.assertTrue(response.jsonPath().getList("id").contains("LUDO"), "LUDO category not found");
-        softAssert.assertTrue(response.jsonPath().getList("id").contains("FREEFIRE"), "FREEFIRE category not found");
-        softAssert.assertTrue(response.jsonPath().getList("id").contains("BGMI"), "BGMI category not found");
-        softAssert.assertTrue(response.jsonPath().getList("id").contains("MOBILEGAMES"), "MOBILEGAMES category not found");
-        softAssert.assertTrue(response.jsonPath().getList("id").contains("FAU-G"), "FAU-G category not found");
-        softAssert.assertTrue(response.jsonPath().getList("id").contains("SnakesLadders"), "SnakesLadders category not found");
-        softAssert.assertTrue(response.jsonPath().getList("id").contains("ANIME"), "ANIME category not found");
-        softAssert.assertTrue(response.jsonPath().getList("id").contains("MUSIC"), "MUSIC category not found");
-        softAssert.assertTrue(response.jsonPath().getList("id").contains("REWARDS"), "REWARDS category not found");
+       List<String> listOfId = response.jsonPath().getList("id");
+        softAssert.assertTrue(listOfId.contains("ALL"), "All category not found");
+        softAssert.assertTrue(listOfId.contains("TRENDING"), "TRENDING category not found");
+        softAssert.assertTrue(listOfId.contains("MINECRAFT"), "MINECRAFT category not found");
+        softAssert.assertTrue(listOfId.contains("LUDO"), "LUDO category not found");
+        softAssert.assertTrue(listOfId.contains("FREEFIRE"), "FREEFIRE category not found");
+        softAssert.assertTrue(listOfId.contains("BGMI"), "BGMI category not found");
+        softAssert.assertTrue(listOfId.contains("MOBILEGAMES"), "MOBILEGAMES category not found");
+        softAssert.assertTrue(listOfId.contains("FAU-G"), "FAU-G category not found");
+        softAssert.assertTrue(listOfId.contains("SnakesLadders"), "SnakesLadders category not found");
+        softAssert.assertTrue(listOfId.contains("ANIME"), "ANIME category not found");
+        softAssert.assertTrue(listOfId.contains("MUSIC"), "MUSIC category not found");
+        softAssert.assertTrue(listOfId.contains("REWARDS"), "REWARDS category not found");
 
         // Collate all soft assertion results
         softAssert.assertAll();
         
-        logger.info("Verified all required categories (All, TRENDING, MINECRAFT, LUDO, FREEFIRE, BGMI, MOBILEGAMES, FAU-G, SnakesLadders, ANIME, MUSIC, REWARDS) are present ✅");
+        logger.info("Verified all required categories (All, TRENDING, MINECRAFT, LUDO, FREEFIRE, BGMI, MOBILEGAMES, FAU-G, SnakesLadders, ANIME, MUSIC, REWARDS) are present ");
 	}
 	
 	@Test(priority=4)
     public void testGetLiveClubs() {
 Response response = UserEndPoints.getLiveClubReq(accessToken);
+Assert.assertEquals( response.getStatusCode(),200);
+
+//Extract all titles into a List
+List<String> titles = response.jsonPath().getList("title");
+
+
+
+// validations
+
+// 1. Titles list is not empty
+Assert.assertFalse(titles.isEmpty(), "Titles list should not be empty");
+
+// 2. No title should be null or blank
+for (String title : titles) {
+    Assert.assertNotNull(title, "Title should not be null");
+    Assert.assertFalse(title.trim().isEmpty(), "Title should not be empty");
+}
 //Print full response in logs and console
 response.then().log().body();
-logger.debug("Full API Response: {}", response.asPrettyString());
+System.out.println("Titles: " + titles);
+logger.info("Verified the testGetLiveClubs");
+
+
 	}
 }
 	
